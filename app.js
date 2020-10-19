@@ -5,9 +5,16 @@ const app = Vue.createApp({
       name: ''
     };
   },
+  computed:{
+    fullname(){
+      console.log('Running agin ....');
+      if (this.name === ''){ return '';}
+      return this.name + ' ' + " AlQahtani"; // computed is mush better than mehtod in calculation 
+    }
+  },
   methods: {
     fullName(){
-      return this.name + ' ' + " AlQahtani";
+     
     },
 
     setName(event, lastName) {
