@@ -3,31 +3,36 @@ const app = Vue.createApp({
     return {
       counter: 0,
       name: '',
-      fName:'',
+      // fName:'',
       lastName:''
     };
   },
   watch:{
-    name(value){
-      if (value === ''){
-        this.fName = '';
-      }else{
-    this.fName = value + ' ' + this.lastName;
-  }
-    },
-    lastName(value){
-      if (value === ''){
-        this.fName = '';
-      }else{
-    this.fName = this.name + ' ' + value;
-  }
-    },
+    counter(value){
+      if (value > 50){
+         this.counter = 0 ;
+      }
+    }
+  //   name(value){
+  //     if (value === ''){
+  //       this.fName = '';
+  //     }else{
+  //   this.fName = value + ' ' + this.lastName;
+  // }
+  //   },
+  //   lastName(value){
+  //     if (value === ''){
+  //       this.fName = '';
+  //     }else{
+  //   this.fName = this.name + ' ' + value;
+  // }
+  //   },
   },
   computed:{
     fullname(){
-      // console.log('Running agin ....');
-      // if (this.name === ''){ return '';}
-      // return this.name + ' ' + " AlQahtani"; // computed is mush better than mehtod in calculation 
+      console.log('Running agin ....');
+      if (this.name === ''){ return '';}
+      return this.name + ' ' +  lastName ; // computed is mush better than mehtod in calculation 
     }
   },
   methods: {
