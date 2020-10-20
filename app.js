@@ -3,15 +3,23 @@ const app = Vue.createApp({
     return {
       counter: 0,
       name: '',
-      fullName:'',
+      fName:'',
+      lastName:''
     };
   },
   watch:{
     name(value){
       if (value === ''){
-        this.fullName = '';
+        this.fName = '';
       }else{
-    this.fullName = value + ' ' + ' ALQahtani';
+    this.fName = value + ' ' + this.lastName;
+  }
+    },
+    lastName(value){
+      if (value === ''){
+        this.fName = '';
+      }else{
+    this.fName = this.name + ' ' + value;
   }
     },
   },
