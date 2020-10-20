@@ -8,11 +8,20 @@ const app = Vue.createApp({
     };
   },
   watch:{
+
     counter(value){
-      if (value > 50){
-         this.counter = 0 ;
+      if(value > 50 || value < -50){
+        const that = this;
+        setTimeout(function(){
+          that.counter = 0;
+        })
       }
-    }
+    },
+    // counter(value){
+    //   if (value > 50){
+    //      this.counter = 0 ;
+    //   }
+    // }
   //   name(value){
   //     if (value === ''){
   //       this.fName = '';
